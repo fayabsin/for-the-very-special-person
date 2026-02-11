@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100%;
+  background: #fff0f5;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* FLOWERS BACKGROUND */
+.flowers-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.flower {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 20s linear infinite;
+  user-select: none;
+}
+
+.flower:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.flower:nth-child(2) { top: 25%; left: 20%; animation-delay: 3s; }
+.flower:nth-child(3) { top: 50%; left: 10%; animation-delay: 5s; }
+.flower:nth-child(4) { top: 70%; left: 35%; animation-delay: 2s; }
+.flower:nth-child(5) { top: 15%; left: 50%; animation-delay: 4s; }
+.flower:nth-child(6) { top: 40%; left: 65%; animation-delay: 1s; }
+.flower:nth-child(7) { top: 60%; left: 80%; animation-delay: 3s; }
+.flower:nth-child(8) { top: 80%; left: 25%; animation-delay: 6s; }
+.flower:nth-child(9) { top: 5%; left: 70%; animation-delay: 2s; }
+.flower:nth-child(10) { top: 35%; left: 40%; animation-delay: 5s; }
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+  50% { transform: translateY(-50px) rotate(15deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+}
+
+/* CENTER CONTENT */
+.center {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  color: #b0004d;
+}
+
+/* BOUQUET */
+.bouquet {
+  font-size: 8rem;
+  margin-bottom: 20px;
+  animation: bouquet-float 3s ease-in-out infinite alternate;
+}
+
+@keyframes bouquet-float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
+
+/* LETTER CARD */
+.letter {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  margin-bottom: 30px;
+  text-align: justify; /* ensures paragraphs are justified */
+}
+
+.letter h2 {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.letter p {
+  line-height: 1.7;
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+  text-indent: 30px;  /* indent first line of each paragraph */
+}
+
+/* Signature right-aligned */
+.signature {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+
+/* BACK LINK BUTTON */
+.back-link {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.back-link a {
+  text-decoration: none;
+  background: #b0004d;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.back-link a:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .bouquet { font-size: 6rem; }
+  .letter h2 { font-size: 1.6rem; }
+  .letter p { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .bouquet { font-size: 5rem; }
+  .letter h2 { font-size: 1.5rem; }
+  .letter p { font-size: 0.95rem; }
+}
